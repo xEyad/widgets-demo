@@ -5,12 +5,60 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row slots-wrapper">
     <div class="col-2">
       <app-sidebar></app-sidebar>
     </div>
-    <div class="col-8">
+    <div class="col-10 py-5 pr-5 h-100">
+
       <!-- SLOTS -->
+      <ng-container *ngTemplateOutlet="slots"></ng-container>
     </div>
   </div>
 </div>
+
+
+<ng-template #slots>
+  <div class="row">
+    <div class="col-12">
+      <p>Drag a widget into an open dashboard slot</p>
+    </div>
+  </div>
+
+  <div class="row h-100">
+
+    <div class="col-6 s-6">
+      <app-slot></app-slot>
+    </div>
+    <div class="col-6 s-6">
+      <app-slot></app-slot>
+    </div>
+
+    <div class="col-2 s-3">
+      <app-slot></app-slot>
+    </div>
+    <div class="col-2 s-3">
+      <app-slot></app-slot>
+    </div>
+    <div class="col-2 s-3">
+      <app-slot></app-slot>
+    </div>
+
+    <div class="col-3 s-6">
+      <app-slot></app-slot>
+    </div>
+    <div class="col-3 s-6">
+      <app-slot></app-slot>
+    </div>
+
+    <div class="col-2 s-3">
+      <app-slot></app-slot>
+    </div>
+    <div class="col-2 s-3">
+      <app-slot></app-slot>
+    </div>
+    <div class="col-2 s-3">
+      <app-slot></app-slot>
+    </div>
+  </div>
+</ng-template>
