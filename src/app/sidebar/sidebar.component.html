@@ -4,17 +4,19 @@
     <span>New Widget</span>
   </div>
   <div
-  [dndDraggable]="draggable.data"
-     [dndEffectAllowed]="draggable.effectAllowed"
-     [dndDisableIf]="draggable.disable"
-     (dndStart)="onDragStart($event)"
-     (dndCopied)="onDraggableCopied($event)"
-     (dndLinked)="onDraggableLinked($event)"
-     (dndMoved)="onDraggableMoved($event)"
-     (dndCanceled)="onDragCanceled($event)"
-     (dndEnd)="onDragEnd($event)"
-  class="widget clickable" *ngFor="let widget of widgets">
-    <img [src]="widget.img" alt="">
-    <h4>{{widget.name}}</h4>
+    [dndDraggable]="widget"
+    [dndEffectAllowed]="draggable.effectAllowed"
+    [dndDisableIf]="draggable.disable"
+    (dndStart)="onDragStart($event)"
+    (dndCopied)="onDraggableCopied($event)"
+    (dndLinked)="onDraggableLinked($event)"
+    (dndMoved)="onDraggableMoved($event)"
+    (dndCanceled)="onDragCanceled($event)"
+    (dndEnd)="onDragEnd($event)"
+    class="widget clickable"
+    *ngFor="let widget of widgets"
+  >
+    <img [src]="widget.img" alt="" />
+    <h4>{{ widget.name }}</h4>
   </div>
 </div>

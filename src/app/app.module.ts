@@ -13,6 +13,10 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WidgetSlotDirective } from './widgetSlot.directive';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { PolarRadarComponent } from './polar-radar/polar-radar.component';
+import { TreeMapComponent } from './tree-map/tree-map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { WidgetSlotDirective } from './widgetSlot.directive';
     SidebarComponent,
     SlotComponent,
     PieChartComponent,
-    WidgetSlotDirective
+    WidgetSlotDirective,
+    LineChartComponent,
+    BarChartComponent,
+    PolarRadarComponent,
+    TreeMapComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,7 @@ import { WidgetSlotDirective } from './widgetSlot.directive';
     BrowserAnimationsModule
   ],
   providers: [],
-  entryComponents:[PieChartComponent],
+  entryComponents:[PieChartComponent,LineChartComponent,BarChartComponent,PolarRadarComponent,TreeMapComponent],
   bootstrap: [AppComponent]
 
 })

@@ -1,4 +1,5 @@
-import { Widget } from './../widget.d';
+import { WidgetType } from './../widget-mapper.service';
+import { Widget } from '../widget';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pie-chart.component.scss']
 })
 export class PieChartComponent implements OnInit,Widget {
-
+  type:WidgetType.pie;
   single = [
     {
       "name": "Germany",

@@ -1,4 +1,4 @@
-import { Widget } from './../widget.d';
+import { Widget } from '../widget';
 import { WidgetMapperService } from './../widget-mapper.service';
 import { DndDropEvent } from 'ngx-drag-drop';
 import { Component, OnInit, ViewChild, Input, ComponentFactoryResolver } from '@angular/core';
@@ -29,7 +29,7 @@ export class SlotComponent implements OnInit {
 
   onDrop(event:DndDropEvent) {
     console.log("dropped", JSON.stringify(event, null, 2));
-    this.widgetType = WidgetType.pie;
+    this.widgetType = event.data.type;
     this.haveChild = true;
     this.loadComponent();
   }
