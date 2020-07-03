@@ -13,6 +13,7 @@ import { WidgetSlotDirective } from '../widgetSlot.directive';
 export class SlotComponent implements OnInit {
 
   @Input() widgetType : WidgetType;
+  @Input() slotDisabled = false;
   haveChild = false;
   @ViewChild(WidgetSlotDirective,{static:true}) slot:WidgetSlotDirective;
   constructor(

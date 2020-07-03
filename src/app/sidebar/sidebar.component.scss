@@ -2,7 +2,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100vh - 160px);
   overflow-y: scroll;
   background-color: white;
   .addBtn{
@@ -12,6 +12,9 @@
     align-items: center;
     padding: 20px;
     margin-bottom: 10px;
+    i{
+      margin-right: 10px;
+    }
   }
   .widget{
     text-align: center;

@@ -1,11 +1,14 @@
+import { WidgetType } from './../widget-mapper.service';
 import { Component, OnInit } from '@angular/core';
+import { Widget } from '../widget';
 
 @Component({
   selector: 'app-polar-radar',
   templateUrl: './polar-radar.component.html',
   styleUrls: ['./polar-radar.component.scss']
 })
-export class PolarRadarComponent implements OnInit {
+export class PolarRadarComponent implements OnInit,Widget {
+  type:WidgetType.polar;
   multi: any[] = [
   {
     "name": "Germany",

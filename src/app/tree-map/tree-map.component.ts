@@ -1,11 +1,14 @@
+import { WidgetType } from './../widget-mapper.service';
 import { Component, OnInit } from '@angular/core';
+import { Widget } from '../widget';
 
 @Component({
   selector: 'app-tree-map',
   templateUrl: './tree-map.component.html',
   styleUrls: ['./tree-map.component.scss']
 })
-export class TreeMapComponent implements OnInit {
+export class TreeMapComponent implements OnInit,Widget {
+  type:WidgetType.tree;
   single: any[] =  [
     {
       "name": "Germany",

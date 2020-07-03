@@ -11,6 +11,18 @@
     height: 100vh;
   }
 }
+.slots{
+  height: calc(100% - 160px);
+  overflow-y: auto;
+app-slot{
+  display: block;
+  height: 100%;
+  margin-bottom: 15px;
+}
+  .col-12,.col-11,.col-10,.col-9,.col-8,.col-7,.col-6,.col-5,.col-4,.col-3,.col-2,.col-1{
+    margin-bottom: 15px;
+  }
+}
 
 .s-1{
   height: 8.3%;
