@@ -1,0 +1,10 @@
+<div class="wrapper border-right">
+  <div class="addBtn clickable border">
+    <i class="fas fa-plus"></i>
+    <span>New Widget</span>
+  </div>
+  <div class="widget clickable" *ngFor="let widget of widgets">
+    <img [src]="widget.img" alt="">
+    <h4>{{widget.name}}</h4>
+  </div>
+</div>

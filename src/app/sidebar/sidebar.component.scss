@@ -1,0 +1,24 @@
+.wrapper{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: white;
+  .addBtn{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  .widget{
+    text-align: center;
+    color: cornflowerblue;
+    margin-bottom: 20px;
+    img{
+      width: 100%;
+    }
+  }
+}
