@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,6 +12,7 @@ import { DndModule } from 'ngx-drag-drop';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WidgetSlotDirective } from './widgetSlot.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     SidebarComponent,
     SlotComponent,
-    PieChartComponent
+    PieChartComponent,
+    WidgetSlotDirective
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [],
+  entryComponents:[PieChartComponent],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

@@ -1,5 +1,12 @@
-<div class="slot" dndDropzone
+<div
+*ngIf="!haveChild"
+class="slot"
+dndDropzone
 (dndDragover)="onDragover($event)"
 (dndDrop)="onDrop($event)">
   <i class="fas fa-plus-circle"></i>
+</div>
+
+<div #widget class="filled-slot">
+  <ng-template widget-slot></ng-template>
 </div>

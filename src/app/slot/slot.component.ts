@@ -1,5 +1,9 @@
+import { Widget } from './../widget.d';
+import { WidgetMapperService } from './../widget-mapper.service';
 import { DndDropEvent } from 'ngx-drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, ComponentFactoryResolver } from '@angular/core';
+import { WidgetType } from '../widget-mapper.service';
+import { WidgetSlotDirective } from '../widgetSlot.directive';
 
 @Component({
   selector: 'app-slot',
@@ -8,7 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlotComponent implements OnInit {
 
-  constructor() { }
+  @Input() widgetType : WidgetType;
+  haveChild = false;
+  @ViewChild(WidgetSlotDirective,{static:true}) slot:WidgetSlotDirective;
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private widgetMapper:WidgetMapperService
+    ) { }
 
   ngOnInit() {
   }
@@ -18,7 +28,19 @@ export class SlotComponent implements OnInit {
   }
 
   onDrop(event:DndDropEvent) {
-
     console.log("dropped", JSON.stringify(event, null, 2));
+    this.widgetType = WidgetType.pie;
+    this.haveChild = true;
+    this.loadComponent();
+  }
+  loadComponent() {
+    const component = this.widgetMapper.getComponent(this.widgetType);
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+
+    const viewContainerRef = this.slot.viewContainerRef;
+    viewContainerRef.clear();
+
+    const componentRef = viewContainerRef.createComponent(componentFactory);
+    (<Widget>componentRef.instance); //manipulate it through interface
   }
 }

@@ -1,3 +1,4 @@
+import { Widget } from './../widget.d';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.scss']
 })
-export class PieChartComponent implements OnInit {
+export class PieChartComponent implements OnInit,Widget {
 
   single = [
     {
@@ -25,7 +26,7 @@ export class PieChartComponent implements OnInit {
       "value": 6200000
     }
   ];
-  view: any[] = [700, 400];
+  view: any[] ;
 
   // options
   gradient: boolean = true;
