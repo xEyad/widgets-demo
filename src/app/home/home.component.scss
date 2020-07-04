@@ -14,49 +14,26 @@
 .slots{
   height: calc(100% - 160px);
   overflow-y: auto;
-app-slot{
-  display: block;
-  height: 100%;
-  margin-bottom: 15px;
-}
-  .col-12,.col-11,.col-10,.col-9,.col-8,.col-7,.col-6,.col-5,.col-4,.col-3,.col-2,.col-1{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  grid-gap: 15px;
+  app-slot{
+    display: block;
+    height: 100%;
     margin-bottom: 15px;
   }
-}
-
-.s-1{
-  height: 8.3%;
-}
-.s-2{
-  height: 16.6%;
-}
-.s-3{
-  height: 24.9%;
-}
-.s-4{
-  height: 33.2%;
-}
-.s-5{
-  height: 41.5%;
-}
-.s-6{
-  height: 49.8%;
-}
-.s-7{
-  height: 58.1%;
-}
-.s-8{
-  height: 66.4%;
-}
-.s-9{
-  height: 74.7%;
-}
-.s-10{
-  height: 83%;
-}
-.s-11{
-  height: 91.3%;
-}
-.s-12{
-  height: 100%;
+  .g-big{
+    grid-column-end: span 3;
+    grid-row-end: span 2;
+  }
+  .g-medium{
+    grid-column-end: span 1;
+    grid-row-end: span 2;
+  }
+  .g-small{
+    grid-column-end: span 1;
+    grid-row-end: span 1;
+  }
 }

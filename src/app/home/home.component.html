@@ -9,7 +9,7 @@
     <div class="col-2">
       <app-sidebar></app-sidebar>
     </div>
-    <div class="col-10 py-0 pr-5 h-100">
+    <div class="col-10 py-0 pb-5 pr-5 h-100">
       <!-- SLOTS -->
       <ng-container *ngTemplateOutlet="slots"></ng-container>
     </div>
@@ -26,14 +26,22 @@
 
   <div class="row h-100 slots">
 
-    <div class="col-6 s-6">
-      <app-slot></app-slot>
-    </div>
-    <div class="col-6 s-6">
-      <app-slot></app-slot>
-    </div>
+      <app-slot class="g-big"></app-slot>
+      <app-slot class="g-big"></app-slot>
 
-    <div class="col-2 s-3">
+      <app-slot [slotDisabled]='true' class="g-small"></app-slot>
+      <app-slot [slotDisabled]='true' class="g-small"></app-slot>
+      <app-slot [slotDisabled]='true' class="g-small"></app-slot>
+
+      <app-slot [slotDisabled]='true' class="g-medium"></app-slot>
+      <app-slot [slotDisabled]='true' class="g-medium"></app-slot>
+      <app-slot [slotDisabled]='true' class="g-medium"></app-slot>
+
+      <app-slot [slotDisabled]='true' class="g-small"></app-slot>
+      <app-slot [slotDisabled]='true' class="g-small"></app-slot>
+      <app-slot [slotDisabled]='true' class="g-small"></app-slot>
+
+    <!-- <div class="col-2 s-3">
       <app-slot [slotDisabled]='true'></app-slot>
     </div>
     <div class="col-2 s-3">
@@ -58,6 +66,6 @@
     </div>
     <div class="col-2 s-3">
       <app-slot [slotDisabled]='true'></app-slot>
-    </div>
+    </div> -->
   </div>
 </ng-template>
