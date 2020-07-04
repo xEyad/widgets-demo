@@ -38,8 +38,8 @@ export class SidebarComponent implements OnInit {
   ];
   draggable= {
     effectAllowed: "all",
-      disable: false,
-      handle: false
+    disable: false,
+    handle: false
   }
   constructor() { }
 

@@ -15,7 +15,7 @@ export class SlotComponent implements OnInit {
   @Input() widgetType : WidgetType;
   @Input() slotDisabled = false;
   haveChild = false;
-  @ViewChild(WidgetSlotDirective,{static:true}) slot:WidgetSlotDirective;
+  @ViewChild(WidgetSlotDirective,{static:true,}) slot:WidgetSlotDirective;
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private widgetMapper:WidgetMapperService

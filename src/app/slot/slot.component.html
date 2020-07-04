@@ -1,20 +1,17 @@
 <div
-*ngIf="!haveChild && !slotDisabled"
-class="slot"
-dndDropzone
-(dndDragover)="onDragover($event)"
-(dndDrop)="onDrop($event)">
-  <i class="fa fa-plus-circle fa-3x" ></i>
-
-</div>
-
-<div
-*ngIf="slotDisabled"
-class="slot slot-disabled"
+  [ngClass]="{ 'filled-slot': haveChild, 'slot': !haveChild }"
+  dndDropzone
+  [dndEffectAllowed]="'all'"
+  [dndDragoverClass]="'dndDraggingZone'"
+  [dndDropzoneDisabledClass]="'slot-disabled'"
+  [dndDisableIf]="slotDisabled"
+  (dndDragover)="onDragover($event)"
+  (dndDrop)="onDrop($event)"
 >
-<i class="fa fa-times-circle fa-3x" aria-hidden="true"></i>
-</div>
+  <ng-container *ngIf="!haveChild">
+    <i class="fa fa-plus-circle fa-3x" *ngIf="!slotDisabled"></i>
+    <i class="fa fa-times-circle fa-3x" *ngIf="slotDisabled"></i>
+  </ng-container>
 
-<div class="filled-slot" >
-  <ng-template widget-slot></ng-template>
+  <ng-container widget-slot></ng-container>
 </div>
