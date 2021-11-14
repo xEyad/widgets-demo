@@ -31,17 +31,25 @@ export class SlotComponent implements OnInit {
   onDrop(event:DndDropEvent) {
     console.log("dropped", JSON.stringify(event, null, 2));
     this.widgetType = event.data.type;
-    this.haveChild = true;
     this.loadComponent();
   }
+
   loadComponent() {
     const component = this.widgetMapper.getComponent(this.widgetType);
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
 
     const viewContainerRef = this.slot.viewContainerRef;
-    viewContainerRef.clear();
+    this.clear();
+    this.haveChild = true;
 
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (<Widget>componentRef.instance); //manipulate it through interface
+  }
+
+  clear()
+  {
+    const viewContainerRef = this.slot.viewContainerRef;
+    viewContainerRef.clear();
+    this.haveChild = false;
   }
 }

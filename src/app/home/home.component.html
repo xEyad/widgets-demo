@@ -15,7 +15,7 @@
 
       <div class="row mt-2">
         <div class="col-12 d-flex justify-content-end">
-          <button class="btn btn-light mr-4">back</button>
+          <button class="btn btn-danger mr-4" (click)="reset()">Reset</button>
           <button class="btn btn-primary">Finish</button>
         </div>
       </div>
@@ -34,7 +34,7 @@
 
   <div class="row h-100 slots">
 
-      <app-slot class="g-big"></app-slot>
+      <app-slot class="g-big" #slot1></app-slot>
       <app-slot class="g-big"></app-slot>
 
       <app-slot [slotDisabled]='true' class="g-small"></app-slot>
@@ -42,7 +42,7 @@
       <app-slot [slotDisabled]='true' class="g-small"></app-slot>
 
       <app-slot [slotDisabled]='true' class="g-medium"></app-slot>
-      <app-slot [slotDisabled]='true' class="g-medium"></app-slot>
+      <app-slot [slotDisabled]='false' class="g-medium"></app-slot>
       <app-slot [slotDisabled]='true' class="g-medium"></app-slot>
 
       <app-slot [slotDisabled]='true' class="g-small"></app-slot>
